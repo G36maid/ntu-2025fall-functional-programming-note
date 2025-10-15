@@ -30,7 +30,7 @@ This repository contains comprehensive notes and materials for a functional prog
 
 ---
 
-## 原文件連結 Original Documents
+## Original Documents
 
 ### Course Information
 
