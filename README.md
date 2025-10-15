@@ -45,9 +45,13 @@ Organized markdown notes structured to match course materials:
 
 #### 🧪 Practical Notes (`notes/practicals/`)
 - [01-functions-and-definitions.md](notes/practicals/01-functions-and-definitions.md) - Functions and Definitions
+- [02-1-program-synthesis-sols.md](notes/practicals/02-1-program-synthesis-sols.md) - Program Synthesis Solutions
+- [03-induction.md](notes/practicals/03-induction.md) - Induction Proofs
+- [03-induction-sols.md](notes/practicals/03-induction-sols.md) - Induction Proofs Solutions
 
 #### 📝 Worksheet Notes (`notes/worksheets/`)
-- *To be added as worksheets are covered*
+- [02-worksheet.md](notes/worksheets/02-worksheet.md) - Worksheet 2
+- [03-worksheet.md](notes/worksheets/03-worksheet.md) - Worksheet 3
 
 ### Resources (`notes/resources/`)
 Detailed reference materials and extended topics.
@@ -91,19 +95,19 @@ This course uses Haskell as the primary functional programming language. Recomme
 ## 📋 Progress Tracking
 
 ### Handouts
-- [ ] Handout 00: Introduction to Functional Programming
-- [ ] Handout 02: Simple Datatypes & Functions on Lists  
-- [ ] Handout 03: Definition and Proof by Induction
+- [x] Handout 00: Introduction to Functional Programming
+- [x] Handout 02: Simple Datatypes & Functions on Lists  
+- [x] Handout 03: Definition and Proof by Induction
 
 ### Practicals
-- [ ] Practical 01: Functions and Definitions
-- [ ] Practical 02-1: (To be added)
-- [ ] Practical 02-2: (To be added)  
-- [ ] Practical 03: (To be added)
+- [x] Practical 01: Functions and Definitions
+- [x] Practical 02-1: Program Synthesis
+- [ ] Practical 02-2: Caesar Cipher
+- [x] Practical 03: Induction Proofs
 
 ### Worksheets
-- [ ] Worksheet 02: (To be added)
-- [ ] Worksheet 03: (To be added)
+- [x] Worksheet 02: Introduction to Haskell
+- [x] Worksheet 03: Definition and Proof by Induction
 
 ## 🤝 Contributing
 
