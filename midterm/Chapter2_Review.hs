@@ -52,6 +52,61 @@ comprehension2 = [(x, c) | x <- [1,2], c <- ['a', 'b']]
 -- -> [(1,'a'),(1,'b'),(2,'a'),(2,'b')]
 
 -- | =================================================================
+-- | 2.5. 基本列表操作 (Basic List Operations)
+-- | =================================================================
+
+-- | 除了高階函數外，Haskell 也提供了一系列方便的函數來操作列表。
+-- | **警告**: 其中一些函數 (如 head, tail) 是「部分函數」，在空列表上會出錯！
+
+-- | (A) 取值函數
+headExample :: Integer
+headExample = head [1,2,3] -- -> 1
+
+tailExample :: [Integer]
+tailExample = tail [1,2,3] -- -> [2,3]
+
+lastExample :: Integer
+lastExample = last [1,2,3] -- -> 3
+
+initExample :: [Integer]
+initExample = init [1,2,3] -- -> [1,2]
+
+-- | (!!) 是一個中綴運算子，用來依索引取值 (從 0 開始)。
+indexExample :: Integer
+indexExample = [10,20,30] !! 2 -- -> 30
+
+-- | (B) 屬性函數
+lengthExample :: Int
+lengthExample = length [1,2,3] -- -> 3
+
+nullExample :: Bool
+nullExample = null [] -- -> True
+
+-- | (C) 攤平函數
+-- | concat: 將一個列表的列表攤平成一個列表。
+concatExample :: [Integer]
+concatExample = concat [[1,2], [3], [4,5]] -- -> [1,2,3,4,5]
+
+-- | (D) 切片函數
+takeExample :: [Integer]
+takeExample = take 2 [1,2,3,4] -- -> [1,2]
+
+dropExample :: [Integer]
+dropExample = drop 2 [1,2,3,4] -- -> [3,4]
+
+-- | takeWhile: 從開頭取出符合條件的元素，直到第一個不符合的為止。
+takeWhileExample :: [Integer]
+takeWhileExample = takeWhile (< 3) [1,2,3,4,1] -- -> [1,2]
+
+-- | dropWhile: 從開頭丟棄符合條件的元素，直到第一個不符合的為止。
+dropWhileExample :: [Integer]
+dropWhileExample = dropWhile (< 3) [1,2,3,4,1] -- -> [3,4,1]
+
+-- | **重要性質**:
+-- | `take n xs ++ drop n xs == xs`
+-- | `takeWhile p xs ++ dropWhile p xs == xs`
+
+-- | =================================================================
 -- | 3. 三大核心工具 (The Big Three): map, filter, zip
 -- | =================================================================
 

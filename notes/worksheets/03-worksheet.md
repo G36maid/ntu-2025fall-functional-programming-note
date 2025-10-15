@@ -1,210 +1,193 @@
-Programming Languages: Functional Programming
-Worksheet for 3. Definition and Proof by Induction
+# Worksheet 3: Definition and Proof by Induction
 
-Shin-Cheng Mu
+**Author:** Shin-Cheng Mu
+**Term:** Autumn 2025
 
-Autumn 2025
+---
+
+This worksheet is to fill in the definitions and proofs discussed in the lecture.
+
+## 1. Induction on Natural Numbers
 
 Finish the definitions.
 
-1 Induction on Natural Numbers
+```haskell
+(+) :: Nat -> Nat -> Nat
+0 + n       = n
+(1+ m) + n  = 1 + (m + n)
 
-(+)
-:: Nat → Nat → Nat
-=
-0 + n
-(1+ m) + n =
+(×) :: Nat -> Nat -> Nat
+0 × n       = 0
+(1+ m) × n  = n + (m * n) -- Assuming n is added m+1 times
 
-:: Nat → Nat → Nat
-(×)
-0 × n
-=
-(1+ m) × n =
+exp :: Nat -> Nat -> Nat
+exp b 0     = 1
+exp b (1+ n) = b * exp b n
+```
 
-:: Nat → Nat → Nat
-exp
-exp b 0
-=
-exp b (1+ n) =
+## 2. Induction on Lists
 
-2 Induction on Lists
+```haskell
+sum :: [Int] -> Int
+sum []        = 0
+sum (x : xs)  = x + sum xs
 
-sum
-:: List Int → Int
-=
-sum [ ]
-sum (x : xs) =
+map :: (a -> b) -> [a] -> [b]
+map f []        = []
+map f (x : xs)  = f x : map f xs
 
-:: (a → b) → List a → List b
-map
-map f [ ]
-=
-map f (x : xs) =
+(++) :: [a] -> [a] -> [a]
+[] ++ ys       = ys
+(x : xs) ++ ys = x : (xs ++ ys)
+```
 
-:: List a → List a → List a
-(++)
-[ ] ++ ys
-=
-(x : xs) ++ ys =
+**Prove: `xs ++ (ys ++ zs) = (xs ++ ys) ++ zs`.**
 
-Prove: xs ++(ys ++ zs) = (xs ++ ys) ++ zs.
+*Proof. Induction on `xs`.*
 
-1
+*   **Case `xs := []`:**
+    ```
+    [] ++ (ys ++ zs)
+    = { def of ++ }
+    ys ++ zs
+    = { def of ++, applied to [] ++ ys }
+    ([] ++ ys) ++ zs
+    ```
 
-Proof. Induction on xs.
-Case xs := [ ]:
+*   **Case `xs := x : xs`:**
+    ```
+    (x : xs) ++ (ys ++ zs)
+    = { def of ++ }
+    x : (xs ++ (ys ++ zs))
+    = { induction hypothesis }
+    x : ((xs ++ ys) ++ zs)
+    = { def of ++ }
+    (x : (xs ++ ys)) ++ zs
+    = { def of ++ }
+    ((x:xs) ++ ys) ++ zs
+    ```
 
-Case xs := x : xs:
+---
 
-• The function length defined inductively:
+**`length` defined inductively:**
+```haskell
+length :: [a] -> Int
+length []       = 0
+length (x : xs) = 1 + length xs
+```
 
-:: List a → Int
-length
-length [ ]
-=
-length (x : xs) =
+**`concat` repeatedly calls `(++)`:**
+```haskell
+concat :: [[a]] -> [a]
+concat []         = []
+concat (xs : xss) = xs ++ concat xss
+```
 
-• While (++) repeatedly applies (:), the function concat repeatedly calls (++):
+**`filter p xs` keeps only those elements in `xs` that satisfy `p`:**
+```haskell
+filter :: (a -> Bool) -> [a] -> [a]
+filter p []       = []
+filter p (x : xs) | p x       = x : filter p xs
+                  | otherwise = filter p xs
+```
 
-:: List (List a) → List a
-concat
-=
-concat [ ]
-concat (xs : xss) =
+**`take` and `drop`:**
+```haskell
+take :: Int -> [a] -> [a]
+take 0 xs         = []
+take n []         = []
+take n (x : xs)   = x : take (n-1) xs
 
-2
+drop :: Int -> [a] -> [a]
+drop 0 xs         = xs
+drop n []         = []
+drop n (x : xs)   = drop (n-1) xs
+```
 
-• filter p xs keeps only those elements in xs that satisfy p.
+**`takeWhile p xs` yields the longest prefix of `xs` such that `p` holds for each element:**
+```haskell
+takeWhile :: (a -> Bool) -> [a] -> [a]
+takeWhile p []       = []
+takeWhile p (x : xs) | p x       = x : takeWhile p xs
+                     | otherwise = []
+```
 
-filter
-filter p [ ]
-filter p (x : xs)
+**`dropWhile p xs` drops the prefix from `xs`:**
+```haskell
+dropWhile :: (a -> Bool) -> [a] -> [a]
+dropWhile p []       = []
+dropWhile p (x : xs) | p x       = dropWhile p xs
+                     | otherwise = x : xs
+```
 
-:: (a → Bool ) → List a → List a
-=
+**List reversal:**
+```haskell
+reverse :: [a] -> [a]
+reverse []       = []
+reverse (x : xs) = reverse xs ++ [x]
+```
 
-• Recall take and drop, which we used in the previous exercise.
+**`inits` and `tails`:**
+- `inits [1, 2, 3] = [[], [1], [1, 2], [1, 2, 3]]`
+- `tails [1, 2, 3] = [[1, 2, 3], [2, 3], [3], []]`
+```haskell
+inits :: [a] -> [[a]]
+inits []       = [[]]
+inits (x : xs) = [] : map (x:) (inits xs)
 
-•
+tails :: [a] -> [[a]]
+tails []       = [[]]
+tails (x : xs) = (x:xs) : tails xs
+```
 
-:: Nat → List a → List a
-take
-=
-take 0 xs
-=
-take (1+ n) [ ]
-take (1+ n) (x : xs) =
+**`fib` with multiple base cases:**
+```haskell
+fib :: Nat -> Nat
+fib 0 = 0
+fib 1 = 1
+fib (n+2) = fib (n+1) + fib n
+```
 
-:: Nat → List a → List a
-drop
-=
-drop 0 xs
-drop (1+ n) [ ]
-=
-drop (1+ n) (x : xs) =
+**`merge` two sorted lists:**
+```haskell
+merge :: [Int] -> [Int] -> [Int]
+merge [] [] = []
+merge [] ys = ys
+merge xs [] = xs
+merge (x:xs) (y:ys) | x <= y    = x : merge xs (y:ys)
+                    | otherwise = y : merge (x:xs) ys
+```
 
-• takeWhile p xs yields the longest prefix of xs such that p holds for each element.
+**`zip`:**
+```haskell
+zip :: [a] -> [b] -> [(a, b)]
+zip [] _ = []
+zip _ [] = []
+zip (x:xs) (y:ys) = (x,y) : zip xs ys
+```
 
-takeWhile
-takeWhile p [ ]
-takeWhile p (x : xs)
+**Non-structural induction: `msort`**
+```haskell
+msort :: [Int] -> [Int]
+msort []  = []
+msort [x] = [x]
+msort xs  = merge (msort left) (msort right)
+    where
+        half = length xs `div` 2
+        left = take half xs
+        right = drop half xs
+```
 
-:: (a → Bool ) → List a → List a
-=
+## 3. User Defined Inductive Datatypes
 
-• dropWhile p xs drops the prefix from xs.
+**Internally labelled binary trees:**
+```haskell
+data Tree a = Null | Node a (Tree a) (Tree a)
+```
 
-dropWhile
-dropWhile p [ ]
-dropWhile p (x : xs)
-
-:: (a → Bool ) → List a → List a
-=
-
-• List reversal.
-
-:: List a → List a
-reverse
-reverse [ ]
-=
-reverse (x : xs) =
-
-• inits [1, 2, 3] = [[ ], [1], [1, 2], [1, 2, 3]]
-
-:: List a → List (List a)
-inits
-=
-inits [ ]
-inits (x : xs) =
-
-3
-
-• tails [1, 2, 3] = [[1, 2, 3], [2, 3], [3], [ ]]
-
-:: List a → List (List a)
-tails
-tails [ ]
-=
-tails (x : xs) =
-
-• Some functions discriminate between several base cases. E.g.
-
-:: Nat → Nat
-fib
-=
-fib 0
-fib 1
-=
-fib (2 + n) =
-
-• E.g. the function merge merges two sorted lists into one sorted list:
-
-merge
-merge [ ] [ ]
-merge [ ] (y : ys)
-merge (x : xs) [ ]
-merge (x : xs) (y : ys)
-
-:: List Int → List Int → List Int
-=
-=
-=
-
-•
-
-:: List a → List b → List (a, b)
-zip
-=
-zip [ ] [ ]
-=
-zip [ ] (y : ys)
-zip (x : xs) [ ]
-=
-zip (x : xs) (y : ys) =
-
-• Non-structural induction. Example: merge sort.
-
-:: List Int → List Int
-
-msort
-msort [ ] =
-msort [x] =
-msort xs =
-
-3 User Defined Inductive Datatypes
-
-• This is a possible definition of internally labelled binary trees:
-
-data Tree a = Null | Node a (Tree a) (Tree a) ,
-
-4
-
-• on which we may inductively define functions:
-
-:: Tree Nat → Nat
-sumT
-sumT Null
-=
-sumT (Node x t u) =
-
-5
+**Inductively defined function on `Tree`:**
+```haskell
+sumT :: Tree Int -> Int
+sumT Null           = 0
+sumT (Node x t u) = x + sumT t + sumT u
+```
