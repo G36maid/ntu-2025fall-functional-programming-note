@@ -11,6 +11,11 @@ This repository contains comprehensive notes and materials for a functional prog
 * [00-introduction.md](./notes/handouts/00-introduction.md)
 * [02-intro-to-haskell.md](./notes/handouts/02-intro-to-haskell.md)
 * [03-induction.md](./notes/handouts/03-induction.md)
+* [04-type-classes.md](./notes/handouts/04-type-classes.md)
+* [05-program-calculation.md](./notes/handouts/05-program-calculation.md)
+* [06-program-calculation-2.md](./notes/handouts/06-program-calculation-2.md)
+* [07-folds-and-fusion.md](./notes/handouts/07-folds-and-fusion.md)
+* [08-streams-and-codata.md](./notes/handouts/08-streams-and-codata.md)
 
 ### Practicals
 
@@ -22,6 +27,13 @@ This repository contains comprehensive notes and materials for a functional prog
 * [03-induction.md](./notes/practicals/03-induction.md)
 * [03-induction-proofs.md](./notes/practicals/03-induction-proofs.md)
 * [03-induction-sols.md](./notes/practicals/03-induction-sols.md)
+* [05-program-calculation.md](./notes/practicals/05-program-calculation.md)
+* [05-program-calculation-sols.md](./notes/practicals/05-program-calculation-sols.md)
+* [06-program-calculation-2.md](./notes/practicals/06-program-calculation-2.md)
+* [07-folds-and-fusion.md](./notes/practicals/07-folds-and-fusion.md)
+* [07-folds-and-fusion-sols.md](./notes/practicals/07-folds-and-fusion-sols.md)
+* [08-streams-and-codata.md](./notes/practicals/08-streams-and-codata.md)
+* [08-streams-and-codata-sols.md](./notes/practicals/08-streams-and-codata-sols.md)
 
 ### Worksheets
 
@@ -41,6 +53,11 @@ This repository contains comprehensive notes and materials for a functional prog
 * [handouts_00.pdf](./course-materials/handouts/handouts_00.pdf)
 * [handouts_02.pdf](./course-materials/handouts/handouts_02.pdf)
 * [handouts_03.pdf](./course-materials/handouts/handouts_03.pdf)
+* [handouts_04.pdf](./course-materials/handouts/handouts_04.pdf)
+* [handouts_05.pdf](./course-materials/handouts/handouts_05.pdf)
+* [handouts_06.pdf](./course-materials/handouts/handouts_06.pdf)
+* [handouts_07.pdf](./course-materials/handouts/handouts_07.pdf)
+* [handouts_08.pdf](./course-materials/handouts/handouts_08.pdf)
 
 ### Practicals
 
@@ -51,6 +68,14 @@ This repository contains comprehensive notes and materials for a functional prog
 * [practicals_02-2.pdf](./course-materials/practicals/practicals_02-2.pdf)
 * [practicals_03.pdf](./course-materials/practicals/practicals_03.pdf)
 * [practicals_03_sols.pdf](./course-materials/practicals/practicals_03_sols.pdf)
+* [practicals_05.pdf](./course-materials/practicals/practicals_05.pdf)
+* [practicals_05_sols.pdf](./course-materials/practicals/practicals_05_sols.pdf)
+* [practicals_06.pdf](./course-materials/practicals/practicals_06.pdf)
+* [practicals_06-1.pdf](./course-materials/practicals/practicals_06-1.pdf)
+* [practicals_07.pdf](./course-materials/practicals/practicals_07.pdf)
+* [practicals_07_sols.pdf](./course-materials/practicals/practicals_07_sols.pdf)
+* [practicals_08.pdf](./course-materials/practicals/practicals_08.pdf)
+* [practicals_08_sols.pdf](./course-materials/practicals/practicals_08_sols.pdf)
 
 ### Worksheets
 
@@ -64,3 +89,8 @@ This repository contains comprehensive notes and materials for a functional prog
 * [CaesarCipher_Complete.zip](./course-materials/code/CaesarCipher_Complete.zip)
 * [practicals_02-1_code.zip](./course-materials/code/practicals_02-1_code.zip)
 * [practicals_02-1_code_no_quickcheck.zip](./course-materials/code/practicals_02-1_code_no_quickcheck.zip)
+* [Dragon.zip](./course-materials/code/Dragon.zip)
+* [Work06.hs](./course-materials/code/Work06.hs)
+* [Work06_no_quickcheck.hs](./course-materials/code/Work06_no_quickcheck.hs)
+* [Work07.hs](./course-materials/code/Work07.hs)
+* [Work08.hs](./course-materials/code/Work08.hs)
