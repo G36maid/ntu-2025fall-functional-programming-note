@@ -4,6 +4,26 @@ This repository contains comprehensive notes and materials for a functional prog
 
 ---
 
+## 📚 Exam Review Materials
+
+### Midterm Review (Chapters 1-3)
+* [Chapter1_Review.hs](./midterm/Chapter1_Review.hs) - Foundations of Haskell
+* [Chapter2_Review.hs](./midterm/Chapter2_Review.hs) - Mastering the List
+* [Chapter2_CaesarCipher_Review.hs](./midterm/Chapter2_CaesarCipher_Review.hs) - Caesar Cipher Application
+
+### Final Review (Chapters 4-8)
+* [📖 Final Review README](./final/README.md) - Complete study guide for final exam
+* [Chapter4_TypeClasses_Review.hs](./final/Chapter4_TypeClasses_Review.hs) - Type Classes
+* [Chapter5_ProgramCalculation_Review.hs](./final/Chapter5_ProgramCalculation_Review.hs) - Program Calculation Basics
+* [Chapter6_AdvancedCalculation_Review.hs](./final/Chapter6_AdvancedCalculation_Review.hs) - Tupling & Accumulating Parameters
+* [Chapter7_Folds_Fusion_Review.hs](./final/Chapter7_Folds_Fusion_Review.hs) - Folds and Fold-Fusion
+* [Chapter8_Streams_Codata_Review.hs](./final/Chapter8_Streams_Codata_Review.hs) - Streams and Codata
+* [Additional_Exercises_Review.hs](./final/Additional_Exercises_Review.hs) - Advanced Logic, Tupling & Tree Algorithms
+
+**Note**: All review files include detailed comments in Chinese with Rust comparisons to help Rust developers understand Haskell concepts.
+
+---
+
 ## Notes
 
 ### Handouts
